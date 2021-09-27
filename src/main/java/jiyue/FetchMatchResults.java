@@ -28,7 +28,7 @@ public class FetchMatchResults {
 
 		String url = "http://p.pengyd.com/firstscore/soccer/matchlist?cid=3&d=1&t=2&token=NldheDcxdXl6b0t5RXNXTkhiTitjR3ZySUxKeDRNNUI2bFJBcC83YmE4dz0%3D&type=1";
 		// 初始化一個csv
-		FileWriter fw = new FileWriter("file/writerTest.csv");
+		FileWriter fw = new FileWriter("file/平局走势.csv");
 
 		content = "日期,公司,比赛队伍,赢(最新),平(最新),输(最新),赢(最旧),平(最旧),输(最旧),最新时间,最旧时间";
 		fw.write(content);
@@ -73,6 +73,7 @@ public class FetchMatchResults {
 			}
 		}
 		fw.close();
+		System.out.println("极跃体育平局数据抓取结束！");
 
 	}
 
