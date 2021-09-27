@@ -76,7 +76,7 @@ public class FetchMatchResults {
 					content = " " + date + " ," + matchNumStr + "," + homeTeam + "(" + goalLine + ") VS " + awayTeam
 							+ ", " + finalMatchResult + " ," + winRate + "," + drawRate + "," + lostRate;
 
-					if (finalMatchResult.contentEquals("取消"))
+					if (!finalMatchResult.contentEquals(":"))
 						logger.info("日期 " + date + " 比赛 " + content + " 取消！");
 					else {
 						content = content + "," + anaylstMatchResult();
