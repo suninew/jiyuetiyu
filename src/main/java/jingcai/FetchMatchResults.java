@@ -34,6 +34,9 @@ public class FetchMatchResults {
 	private static String finalMatchResult;
 
 	public static void main(String[] args) throws IOException, ParseException {
+		if (args.length != 1) {
+			System.exit(0);
+		}
 		// 初始化一個csv
 		FileWriter fw = new FileWriter("file/竞彩网足球走势.csv");
 
@@ -42,7 +45,7 @@ public class FetchMatchResults {
 		fw.write("\r\n");
 
 		// 生成所有日期函数
-		generateAllDates("2020-01-01");
+		generateAllDates(args[0]);
 		for (String date : dayLists) {
 			url = "https://webapi.sporttery.cn/gateway/jc/football/getMatchResultV1.qry?matchPage=1&matchBeginDate="
 					+ date + "&matchEndDate=" + date + "&pageSize=10000000";
